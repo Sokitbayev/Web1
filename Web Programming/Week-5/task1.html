@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <style>
+    .words {
+      color:#676B67;
+      margin-left: 30px;
+    }
+    .calculate {
+      font-size: 30px;
+    }
+      input {
+        border: 1px solid black;
+        width: 90px;
+        height: 90px;
+        text-align: center;
+        font-size: 30px;
+      }
+
+
+      .matrix_input {
+        margin-left: 30px;
+        width: 277px;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: white;
+        padding: 15px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      }
+      .matrix_find {
+        margin-top: 10px;
+        width: 250px;
+        display: flex;
+        border-left: 4px solid red;
+        box-shadow: 15px 20px 30px rgba(0,0,0,0.5);
+        margin-left: 30px;
+      }
+      .Find_det {
+        display: flex;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+      img {
+        display: flex;
+        margin-left: 50px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      .all {
+        display: flex;
+        width: 1100px;
+      }
+      .result {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: black;
+        width: 90px;
+        height: 30px;
+        border-radius: 8px;
+        margin-left: 50px;
+      }
+      .result_matrix {
+        margin-left: 40px;
+
+      }
+      .NaN {
+        margin-left: 50px;
+        color: red;
+        font-size: 25px;
+        font-family: monospace;
+      }
+      .shygarui {
+        margin-left: 50px;
+        color: #676B67;
+        font-size: 20px;
+      }
+      .Text {
+        margin-left: 50px;
+        color: #676B67;
+        font-size: 18px;
+
+      }
+      .def_text {
+        margin-left: 50px;
+        color: #676B67;
+        font-size: 20px;
+
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+    <script type="text/javascript">
+    function Determinant() {
+      var a=parseInt(document.querySelector("#A").value);
+      var b=parseInt(document.querySelector("#B").value);
+      var c=parseInt(document.querySelector("#C").value);
+      var d=parseInt(document.querySelector("#D").value);
+      var e=parseInt(document.querySelector("#E").value);
+      var f=parseInt(document.querySelector("#F").value);
+      var g=parseInt(document.querySelector("#G").value);
+      var h=parseInt(document.querySelector("#H").value);
+      var i=parseInt(document.querySelector("#I").value);
+      var det= a*e*i- a*f*h -b*d*i +b*f*g + c*d*h -c*e*g;
+      document.querySelector("#otvet").innerHTML ="|A| = "+a+"*"+"("+e+"*"+i+"-"+f+"*"+h+") -"+b+"*("+d+"*"+i+"-"+f+"*"+g+")+"+c+"*("+d+"*"+h + "-"+e+"*"+g+")="+   det;
+      document.querySelector("#NaN").innerHTML = det;
+    }
+    </script>
+  </head>
+  <body>
+    <div class="first">
+      <div class="left">
+        <div class="body_left">
+          <div class="words">
+          <p class="calculate">Calculate determinant of the given matrix:</p>
+        </div>
+          <div class="all">
+            <div class="matix">
+              <div class="matrix_input" id="matrix">
+                <input type="text" id="A" placeholder="A">
+                <input type="text" id="B" placeholder="B">
+                <input type="text" id="C" placeholder="C">
+                <input type="text" id="D" placeholder="D">
+                <input type="text" id="E" placeholder="E">
+                <input type="text" id="F" placeholder="F">
+                <input type="text" id="G" placeholder="G">
+                <input type="text" id="H" placeholder="H">
+                <input type="text" id="I" placeholder="I">
+
+              </div>
+              <div class="matrix_find" onclick="Determinant()">
+                <a href="#"><p class="Find_det">FIND DETERMINANT</p></a>
+              </div>
+
+
+            </div>
+            <div class="result_matrix">
+              <div class="result">
+                <p>Result :</p>
+              </div>
+              <div class="NaN">
+                <h1 id="NaN">NaN</h1>
+              </div>
+              <div class="otvet">
+                <p class="shygarui" id="otvet">|A| = A(EI − FH) − B(DI − FG) + C(DH − EG) = NaN</p>
+              </div>
+              <div class="Definition">
+                <p class="def_text">Defenition :</p>
+                <p class="Text">
+                  <b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

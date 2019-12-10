@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
+    <style media="screen">
+    .glavniy_img {
+      max-width: 800px;
+      position: absolute;
+      top: 120px;
+      left: 120px;
+
+    }
+    .def {
+      color: white;
+      position: absolute;
+      top: 90px;
+      left: 850px;
+      max-width: 400px;
+      height: 520px;
+      display: flex;
+      padding-left: 10px;
+      padding-right: 10px;
+      background-color: #2F2626;
+      justify-content: center;
+      align-items: center;
+
+    }
+    .definition {
+      margin-top: 40px;
+      padding: 25px;
+      font-family: 'Be Vietnam', sans-serif;
+      font-size: 15px;
+    }
+    .text {
+      position: absolute;
+      z-index: 2;
+      top: 95px;
+      left: 735px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #CDA4A4;
+      font-family: 'Be Vietnam', sans-serif;
+    }
+    .text_2 {
+      margin-left: 50px;
+    }
+    .show_more {
+      color: lightgray;
+      font-size: 20px;
+      border: 1px solid white;
+      display: flex;
+      align-items: center;
+      width: 200px;
+      height: 50px;
+      position: absolute;
+      top: 480px;
+      left: 900px;
+    }
+    .show {
+      margin-left: 15px;
+    }
+    .icon {
+      display: inline-block;
+      border: 1px solid white;
+      padding: 5px;
+      background-color: white;
+      width: 40px;
+      position: absolute;
+      top: 480px;
+      left: 1090px;
+    }
+    .auisu {
+      border-left: 3px solid red;
+      padding-top:20px;
+      padding-bottom: 20px;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      position: absolute;
+      background-color: white;
+      z-index: 3;
+      top: 450px;
+      left: 150px;
+      display: flex;
+
+    }
+    img {
+      margin-right: 10px;
+      margin-left: 10px;
+      max-width: 100px;
+      box-shadow: 0 0 10px;
+    }
+    .left_arrow{
+      width: 30px;
+      margin: 10px;
+      border-radius: 50%;
+    }
+    .right_arrow {
+      border-radius: 50%;
+      width: 30px;
+      margin: 10px;
+    }
+    .text_1, .text_2 {
+      color: #AC6A9A;
+      text-shadow: 0 0 10px;
+    }
+    #img_1:hover, #img_2:hover, #img_3:hover {
+      transform: scale(1.05);
+    }
+    </style>
+
+  </head>
+  <body>
+      <div class="first">
+        <div class="text">
+          <p class="text_1">Here is the coolest </p>
+            <p id="takirip" class="text_2">New Way</p>
+        </div>
+        <div><img  id="glaviniy" class="glavniy_img"></div>
+        <div class="def" id="def">
+          <p class="definition">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+        </div>
+        <a href="#" id="show">
+        <div class="show_more">
+          <p class="show">Show more</p>
+        </div>
+
+      </a>
+      <div class="auisu">
+        <a href="#" id="left" onclick="bas()"><img src="left.png" alt="" class="left_arrow"></a>
+        <div id="img_1" onclick="aa()"><a href="#"><img id="bir" alt="" class="img_1"></a></div>
+        <div id="img_2" onclick="bb()"><a href="#"><img id="eki" alt="" class="img_2"></a></div>
+        <div id="img_3" onclick="cc()"><a href="#"><img id="uw" alt="" class="img_3"></a></div>
+        <div onclick="bas()"><a href="#" id="right"><img src="right.png" alt="" class="right_arrow"></a></div>
+      </div>
+      <script>
+        var s = 0;
+        var x = new Image();
+        x.src = "picture1.jpg" ;
+        document.getElementById("bir").src = x.src;
+        var y = new Image();
+        y.src = "picture2.jpg";
+        document.getElementById("eki").src = y.src;
+        var z = new Image();
+        z.src = "picture3.jpg";
+        document.getElementById("uw").src = z.src;
+        document.getElementById("glaviniy").src = x.src;
+        function bas() {
+          if(s==0) {
+          document.getElementById("glaviniy").src = y.src;
+          document.getElementById("takirip").innerHTML = "Forest of Kazakhstan";
+          document.getElementById("bir").src = y.src;
+          document.getElementById("eki").src = z.src;
+          document.getElementById("uw").src =x.src;
+          s++
+        }
+          else if(s==1) {
+          document.getElementById("glaviniy").src = z.src;
+          document.getElementById("takirip").innerHTML = "Desert of Egypt";
+          document.getElementById("bir").src = z.src;
+          document.getElementById("eki").src =x.src;
+          document.getElementById("uw").src = y.src;
+          s++;
+        }
+          else if(s==2) {
+          document.getElementById("glaviniy").src = x.src;
+          document.getElementById("takirip").innerHTML = "Ocean of Turkey";
+          document.getElementById("bir").src = x.src;
+          document.getElementById("eki").src = y.src;
+          document.getElementById("uw").src = z.src;
+          s=0;
+        }
+      }
+      function aa() {
+        document.getElementById("glaviniy").src = document.getElementById("bir").src;
+        document.getElementById("takirip").innerHTML = "Forest of Kazakhstan";
+      }
+      function bb() {
+        document.getElementById("glaviniy").src = document.getElementById("eki").src;
+        document.getElementById("takirip").innerHTML = "Desert of Edypt";
+      }
+      function cc() {
+        document.getElementById("glaviniy").src = document.getElementById("uw").src;
+        document.getElementById("takirip").innerHTML = "Ocean of Turkey";
+      }
+
+
+      </script>
+
+
+
+      </div>
+  </body>
+</html>
